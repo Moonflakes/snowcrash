@@ -1,0 +1,13 @@
+pour trouver l'id des groupes : 
+cat /etc/group
+
+chercher tous les fichiers qui appartiennent au groupe flag:
+find {folder} -uid {id flag} {redirect errors}
+find / -uid 3000 2>/dev/null
+
+visualiser ce qu'il y a des les fichiers trouvés:
+cat /usr/sbin/john
+>cdiiddwpgswtgt
+
+decrypt le token : (Cesar décalage 15)
+nottoohardhere
