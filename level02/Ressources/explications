@@ -1,0 +1,9 @@
+commande pour copier le fichier .pcap sur notre machine :
+scp -P 4242 level02@192.168.1.00:level02.pcap level02.pcap
+
+lecture du fichier .pcap avec logiciel wireshark :
+on parcours tous les paquets
+- au paquet 43 on a Password
+- aux paquets suivant on extrait toutes les datas (lettre par lettre) jusqu'à Login incorrect
+- attention : 7f = del
+> ft_waNDReL0L
