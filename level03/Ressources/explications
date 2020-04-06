@@ -5,7 +5,8 @@ propriétaire = flag03 (qui peut aussi exécuter la commande getflag)
 cat level03 :
 on voit "echo Exploit me!"
 
-la commande echo fait partie des fichiers dans les dossiers de la variable d'environement PATH (env)
+on va utiliser le fait que le programme s'exécute avec l'id de flag03 et qu'il exécute un programme 
+en cherchant dans la variable PATH de l'env pour faire executer le programme getflag par ce dernier.
 
 on crée un autre fichier echo dans un dossier writable auquel on liera la commande getflag :
 - dossier permission w pour tout le monde : /tmp (ls -l)
