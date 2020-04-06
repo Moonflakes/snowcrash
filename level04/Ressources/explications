@@ -1,0 +1,7 @@
+cat level04.pl : 
+on voit le commentaire # localhost:4747
+dans /var/www il y a un projet level04 avec un fichier index.html
+cette page tourne avec le script level04.pl qui affiche la valeur du paramètre 'x' de l'url
+
+donc on donne dans l'url la valeur getflag au paramètre x pour récupérer le flag :
+curl localhost:4747?x=\`getflag\`
