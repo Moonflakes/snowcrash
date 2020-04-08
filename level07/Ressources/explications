@@ -4,7 +4,7 @@ on voit :
 
 quand on exécute level07 il echo la variable d'environnement LOGNAME.
 
-donc on change LOGNAME en getflag :
+donc on change LOGNAME en getflag : pour changer en commande exécutable utiliser ``
 export LOGNAME=\`getflag\`
 
 et on réexécute ./level07
