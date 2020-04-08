@@ -1,6 +1,6 @@
 cat /var/mail/level05
 > */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
-= exécuter /usr/sbin/openarenaserver la commande en tant que flag05
+= exécuter la commande /usr/sbin/openarenaserver en tant que flag05
 
 cat /usr/sbin/openarenaserver
 > #!/bin/sh
