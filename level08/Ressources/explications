@@ -8,5 +8,5 @@ ln -s /home/user/level08/token /tmp/fichierlien
 ./level08 /tmp/fichierlien
 > quif5eloekouj29ke0vouxean
 
-log sur flag08
+log sur flag08 avec le token
 getflag

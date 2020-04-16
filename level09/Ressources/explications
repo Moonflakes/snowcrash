@@ -1,0 +1,41 @@
+on a un programme level09 et un token
+
+level09 nous permet de savoir comment décrypter le token : 
+ex : ./level09 lala
+> lbnd
+1ère lettre + 0
+2ème lettre + 1
+3ème lettre + 2
+etc
+
+cat token
+> f4kmm6p|=�p�n��DB�Du{��
+ce token a été crypté via le programme level09
+
+il faut créer un script pour décoder le token :
+//////////////////////////////////////////////
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+    FILE * file;
+    int c;
+    int i;
+
+    i = 0;
+    file = fopen(argv[1], "r");
+    if (file) {
+        while ((c = getc(file)) != EOF){
+            printf("%c", c - i);
+            i++;
+        }
+        fclose(file);
+    }
+}
+//////////////////////////////////////////////
+
+on compile le script et on lit le token avec :
+./a.out /home/user/level09/token
+> f3iji1ju5yuevaus41q1afiuq
+
+su flag09
+getflag
